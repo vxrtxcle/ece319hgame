@@ -170,11 +170,15 @@ void evaluateGuess(void) {
   }
   if(allCorrect) {
     gameWon = true;
+    score += (6 - currentRow) * 30;
     Sound_Highpitch(); // Play victory sound
   } else if(currentRow == 5) {
     // Last guess and not correct
     Sound_Explosion(); // Play losing sound
   }
+  for(int i = 0; i < 5; i++) {
+  savedGuesses[currentRow][i] = currentGuess[i];
+}
 }
 
 
@@ -203,7 +207,7 @@ void drawLetterBox(uint8_t row, uint8_t col) {
     // Past guesses
     char letter[2] = {' ', 0};
     letter[0] = savedGuesses[row][col];
-    ST7735_SetCursor(4 + col*3, 3 + row*2);
+    ST7735_SetCursor(4 + col*3.5, 3 + row*2);
     ST7735_OutString(letter);
   } else if(row == currentRow) {
     // Current guess
@@ -221,6 +225,9 @@ void drawLetterBox(uint8_t row, uint8_t col) {
 
 void updateGameDisplay(void) {
   // Redraw just what needs to be updated
+   for(int col = 0; col < 5; col++) {
+    drawLetterBox(currentRow, col);
+  }
   drawGameBoard();
 }
 
@@ -250,11 +257,12 @@ void displayEndGameScreen(void) {
   
   // Display final score
   ST7735_SetCursor(3, 7);
-  ST7735_OutString((char*)Phrases[0][myLanguage]);
+  ST7735_OutString((char*)CHScore);
   ST7735_OutString(&colon);
   ST7735_OutUDec(score);
   
   // Display restart prompt
+  char* restart = "Restart?";
   ST7735_SetCursor(1, 10);
-  ST7735_OutString((char*)Phrases[1][myLanguage]);
+  ST7735_OutString((char*)restart);
 }

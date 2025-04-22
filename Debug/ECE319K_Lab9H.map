@@ -1,0 +1,1038 @@
+******************************************************************************
+            TI ARM Clang Linker PC v4.0.1                      
+******************************************************************************
+>> Linked Mon Apr 21 18:37:07 2025
+
+OUTPUT FILE NAME:   <ECE319K_Lab9H.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000306d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00020000  00004fa8  0001b058  R  X
+  SRAM                  20200000   00008000  00000aef  00007511  RW X
+  BCR_CONFIG            41c00000   00000080  00000000  00000080  R   
+  BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00004fa8   00004fa8    r-x
+  00000000    00000000    000000c0   000000c0    r-- .intvecs
+  000000c0    000000c0    000032d0   000032d0    r-x .text
+  00003390    00003390    00001960   00001960    r-- .rodata
+  00004cf0    00004cf0    00000008   00000008    r-- .init_array
+  00004cf8    00004cf8    000002b0   000002b0    r-- .cinit
+20200000    20200000    000008f8   00000000    rw-
+  20200000    20200000    000004ad   00000000    rw- .data
+  202004b0    202004b0    00000242   00000000    rw- .bss
+  202006f8    202006f8    00000200   00000000    rw- .sysmem
+20207e00    20207e00    00000200   00000000    rw-
+  20207e00    20207e00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000c0     
+                  00000000    000000c0     startup_mspm0g3507_ticlang.o (.intvecs)
+
+.binit     0    00000000    00000000     
+
+.text      0    000000c0    000032d0     
+                  000000c0    00000224     WordleGame.o (.text._Z13evaluateGuessv)
+                  000002e4    00000210     Lab9HMain.o (.text.TIMG12_IRQHandler)
+                  000004f4    00000210     ST7735.o (.text._Z17ST7735_DrawBitmapssPKtss)
+                  00000704    000001b4     WordleGame.o (.text._Z13drawLetterBoxhh)
+                  000008b8    000001b4     Clock.o (.text._Z15Clock_Init80MHzi)
+                  00000a6c    000001a0     ST7735.o (.text._Z16ST7735_DrawCharSsscssh)
+                  00000c0c    00000192     libclang_rt.builtins.a : adddf3.S.obj (.text.adddf3_subdf3)
+                  00000d9e    00000002                            : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  00000da0    00000154     libc.a : fopen.c.obj (.text._openfile)
+                  00000ef4    00000148     Lab9HMain.o (.text._Z14selectLanguagev)
+                  0000103c    00000118     ST7735.o (.text._Z15ST7735_FillRectsssst)
+                  00001154    00000114     WordleGame.o (.text._Z20displayEndGameScreenv)
+                  00001268    00000114     libc.a : memory.c.obj (.text.aligned_alloc)
+                  0000137c    000000f8     SPI.o (.text._Z8SPI_Initv)
+                  00001474    000000ec     libsysbm.a : add_device.c.obj (.text.add_device)
+                  00001560    000000e8     libc.a : memory.c.obj (.text.free)
+                  00001648    000000e4     libclang_rt.builtins.a : muldf3.S.obj (.text.__muldf3)
+                  0000172c    000000e0     libc.a : setvbuf.c.obj (.text.setvbuf)
+                  0000180c    000000d0     ST7735.o (.text._Z14ST7735_OutCharc)
+                  000018dc    000000c4     WordleGame.o (.text._Z13drawGameBoardv)
+                  000019a0    000000c0     WordleGame.o (.text._Z12startNewGamev)
+                  00001a60    000000b0     Lab9HMain.o (.text.main)
+                  00001b10    000000a2     ST7735.o (.text._ZL11commandListPKh)
+                  00001bb2    00000002     libc.a : _lock.c.obj (.text._nop)
+                  00001bb4    000000a0     libsysbm.a : open.c.obj (.text.open)
+                  00001c54    0000009c     ST7735.o (.text._Z17ST7735_InitPrintfv)
+                  00001cf0    00000098     ST7735.o (.text._Z12ST7735_InitR10initRFlags)
+                  00001d88    00000094     Timer.o (.text._Z15TimerG12_IntArmjj)
+                  00001e1c    00000088     ST7735.o (.text._ZL13setAddrWindowhhhh)
+                  00001ea4    0000000c     Lab9HMain.o (.text._GLOBAL__sub_I_Lab9HMain.cpp)
+                  00001eb0    00000088     libc.a : strcmp-armv6m.S.obj (.text:strcmp)
+                  00001f38    00000084     ST7735.o (.text._Z14ST7735_OutUDecj)
+                  00001fbc    00000084     ST7735.o (.text._Z17ST7735_DrawStringttPcs)
+                  00002040    0000007c     LaunchPad.o (.text._Z14LaunchPad_Initv)
+                  000020bc    0000007c     SlidePot.o (.text._ZN8SlidePot4InitEv)
+                  00002138    0000007c     libc.a : fclose.c.obj (.text.__TI_closefile)
+                  000021b4    0000007c            : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00002230    00000070     ST7735.o (.text._Z16ST7735_DrawPixelsst)
+                  000022a0    0000006c     libsysbm.a : hostlseek.c.obj (.text.HOSTlseek)
+                  0000230c    0000006c                : hostrename.c.obj (.text.HOSTrename)
+                  00002378    0000006c     libc.a : getdevice.c.obj (.text.getdevice)
+                  000023e4    00000064            : memory.c.obj (.text.split)
+                  00002448    00000060     libsysbm.a : hostopen.c.obj (.text.HOSTopen)
+                  000024a8    00000060     Timer.o (.text._Z13TimerG12_Initv)
+                  00002508    0000005c     Sound.o (.text._Z12Sound_Updatev)
+                  00002564    0000005c     DAC5.o (.text._Z9DAC5_Initv)
+                  000025c0    00000058     libsysbm.a : hostread.c.obj (.text.HOSTread)
+                  00002618    00000058                : hostwrite.c.obj (.text.HOSTwrite)
+                  00002670    00000056     libclang_rt.builtins.a : aeabi_idivmod.S.obj (.text.__aeabi_idivmod)
+                  000026c6    00000002     --HOLE-- [fill = 0]
+                  000026c8    00000054     ST7735.o (.text._Z11fillmessagej)
+                  0000271c    00000054     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit)
+                  00002770    00000052            : fflush.c.obj (.text.__TI_doflush)
+                  000027c2    00000002     --HOLE-- [fill = 0]
+                  000027c4    00000050     Switch.o (.text._Z13Button_IntArmh)
+                  00002814    00000050     libsysbm.a : close.c.obj (.text.close)
+                  00002864    00000048                : hostclose.c.obj (.text.HOSTclose)
+                  000028ac    00000048                : hostunlink.c.obj (.text.HOSTunlink)
+                  000028f4    00000048     SPI.o (.text._Z14SPI_OutCommandc)
+                  0000293c    00000048     SlidePot.o (.text._ZN8SlidePot2InEv)
+                  00002984    00000044     WordleGame.o (.text._Z14isWordCompletev)
+                  000029c8    00000042     Lab9HMain.o (.text._Z5sleepj)
+                  00002a0a    00000002     --HOLE-- [fill = 0]
+                  00002a0c    00000042     libclang_rt.builtins.a : fixunsdfsi.S.obj (.text.__fixunsdfsi)
+                  00002a4e    00000002     --HOLE-- [fill = 0]
+                  00002a50    00000040     TExaS.o (.text.TIMG7_IRQHandler)
+                  00002a90    00000040     SPI.o (.text._Z9SPI_Resetv)
+                  00002ad0    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  00002b10    00000040     libc.a : fopen.c.obj (.text._search_fp)
+                  00002b50    0000003a     libclang_rt.builtins.a : muldsi3.S.obj (.text.__muldsi3)
+                  00002b8a    00000002     --HOLE-- [fill = 0]
+                  00002b8c    00000038     SPI.o (.text._Z11SPI_OutDatac)
+                  00002bc4    00000038     Sound.o (.text._Z14SysTick_IntArmjj)
+                  00002bfc    00000038     LaunchPad.o (.text._Z15ActivatePortA_Bv)
+                  00002c34    00000038     libc.a : rand.c.obj (.text.rand)
+                  00002c6c    00000034     Sound.o (.text._Z11Sound_StartPKhj)
+                  00002ca0    00000034     ST7735.o (.text._Z12ST7735_writeiPKcj)
+                  00002cd4    00000034     Clock.o (.text._Z14Clock_Delay1msj)
+                  00002d08    00000034     ST7735.o (.text._Z16ST7735_SetCursorjj)
+                  00002d3c    00000034     WordleGame.o (.text._Z17updateGameDisplayv)
+                  00002d70    00000034     LED.o (.text._Z8LED_Initv)
+                  00002da4    00000034     libc.a : fopen.c.obj (.text.__TI_cleanup)
+                  00002dd8    00000034     libsysbm.a : trgmsg.c.obj (.text.__TI_readmsg)
+                  00002e0c    00000034                : trgmsg.c.obj (.text.__TI_writemsg)
+                  00002e40    00000034     libc.a : exit.c.obj (.text.exit)
+                  00002e74    00000034            : getdevice.c.obj (.text.finddevice)
+                  00002ea8    00000034            : fopen.c.obj (.text.freopen)
+                  00002edc    00000032     ST7735.o (.text._Z15ST7735_Color565hhh)
+                  00002f0e    00000002     --HOLE-- [fill = 0]
+                  00002f10    00000030     ST7735.o (.text._ZL10commonInitPKh)
+                  00002f40    00000030     libc.a : fopen.c.obj (.text.fopen)
+                  00002f70    0000002c     ST7735.o (.text._Z17ST7735_FillScreent)
+                  00002f9c    0000002c     libclang_rt.builtins.a : floatsidf.S.obj (.text.__floatsidf)
+                  00002fc8    0000002c     libsysbm.a : unlink.c.obj (.text.unlink)
+                  00002ff4    00000028     Switch.o (.text._Z11Switch_Initv)
+                  0000301c    00000028     libc.a : memory.c.obj (.text.free_list_insert)
+                  00003044    00000028     libsysbm.a : write.c.obj (.text.write)
+                  0000306c    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  00003094    00000026     ST7735.o (.text._Z16ST7735_OutStringPc)
+                  000030ba    00000002     --HOLE-- [fill = 0]
+                  000030bc    00000024     WordleGame.o (.text._Z15WordleGame_Initv)
+                  000030e0    00000024     DAC5.o (.text._Z8DAC5_Outj)
+                  00003104    00000024     Switch.o (.text._Z9Switch_Inv)
+                  00003128    00000020     Clock.o (.text._Z12SysTick_Initv)
+                  00003148    00000020     SlidePot.o (.text._ZN8SlidePot7ConvertEj)
+                  00003168    0000001e     ST7735.o (.text._ZL9pushColort)
+                  00003186    00000002     --HOLE-- [fill = 0]
+                  00003188    0000001c     startup_mspm0g3507_ticlang.o (.text.Default_Handler)
+                  000031a4    0000001c     startup_mspm0g3507_ticlang.o (.text.HardFault_Handler)
+                  000031c0    0000001c     libc.a : memory.c.obj (.text.free_list_remove)
+                  000031dc    00000018     Lab9HMain.o (.text.__cxx_global_var_init.1)
+                  000031f4    00000018     Lab9HMain.o (.text.__cxx_global_var_init)
+                  0000320c    00000016     ST7735.o (.text._Z11ST7735_openPKcji)
+                  00003222    00000016     ST7735.o (.text._Z11ST7735_readiPcj)
+                  00003238    00000016     SlidePot.o (.text._ZN8SlidePotC2Ejj)
+                  0000324e    00000016     libc.a : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  00003264    00000014     Sound.o (.text._Z15Sound_Explosionv)
+                  00003278    00000014     Sound.o (.text._Z15Sound_Highpitchv)
+                  0000328c    00000012     libc.a : memcpy16.S.obj (.text:TI_memcpy_small)
+                  0000329e    00000012            : copy_decompress_none.c.obj (.text:decompress:none)
+                  000032b0    00000010     Clock.o (.text._Z11Clock_Delayj)
+                  000032c0    0000000e     libc.a : memory.c.obj (.text.OUTLINED_FUNCTION_0)
+                  000032ce    0000000e     ST7735.o (.text._Z12ST7735_lseekili)
+                  000032dc    0000000e     libc.a : strcpy.c.obj (.text.strcpy)
+                  000032ea    0000000e     libsysbm.a : hostrename.c.obj (.text.strcpy)
+                  000032f8    0000000e                : hostrename.c.obj (.text.strlen)
+                  00003306    0000000e     libc.a : memset16.S.obj (.text:TI_memset_small)
+                  00003314    0000000c     Clock.o (.text._Z10Clock_Freqv)
+                  00003320    0000000c     ST7735.o (.text._Z13ST7735_renamePKcS0_)
+                  0000332c    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
+                  00003338    0000000c     libc.a : memory.c.obj (.text.malloc)
+                  00003344    0000000a     ST7735.o (.text._Z12ST7735_closei)
+                  0000334e    0000000a     ST7735.o (.text._Z13ST7735_unlinkPKc)
+                  00003358    0000000a     Lab9HMain.o (.text._Z8PLL_Initv)
+                  00003362    00000008     Sound.o (.text.SysTick_Handler)
+                  0000336a    00000008     Sound.o (.text._Z10Sound_Initv)
+                  00003372    00000002     --HOLE-- [fill = 0]
+                  00003374    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  0000337c    00000008     libsysbm.a : remove.c.obj (.text.remove)
+                  00003384    00000004     startup_mspm0g3507_ticlang.o (.text.Reset_Handler)
+                  00003388    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  0000338c    00000004            : exit.c.obj (.text:abort)
+
+.cinit     0    00004cf8    000002b0     
+                  00004cf8    00000289     (.cinit..data.load) [load image, compression = lzss]
+                  00004f81    00000003     --HOLE-- [fill = 0]
+                  00004f84    0000000c     (__TI_handler_table)
+                  00004f90    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00004f98    00000010     (__TI_cinit_table)
+
+.rodata    0    00003390    00001960     
+                  00003390    000007d0     Sound.o (.rodata._ZL9explosion)
+                  00003b60    0000070a     Sound.o (.rodata._ZL9highpitch)
+                  0000426a    000004fb     ST7735.o (.rodata._ZL4Font)
+                  00004765    00000001     --HOLE-- [fill = 0]
+                  00004766    00000060     WordleGame.o (.rodata._ZL11GuessMarker)
+                  000047c6    0000003c     WordleGame.o (.rodata._ZL8Confetti)
+                  00004802    0000003c     WordleGame.o (.rodata._ZL9CursorBox)
+                  0000483e    0000003b     ST7735.o (.rodata._ZL5Rcmd1)
+                  00004879    0000002b     ST7735.o (.rodata._ZL5Rcmd3)
+                  000048a4    00000016     ST7735.o (.rodata.str1.16252309005921674371)
+                  000048ba    00000011     Lab9HMain.o (.rodata.str1.97460909061800373971)
+                  000048cb    0000000d     ST7735.o (.rodata._ZL10Rcmd2green)
+                  000048d8    0000000d     ST7735.o (.rodata._ZL8Rcmd2red)
+                  000048e5    0000000a     Lab9HMain.o (.rodata._ZL14Goodbye_French)
+                  000048ef    0000000a     Lab9HMain.o (.rodata._ZL19Language_Portuguese)
+                  000048f9    00000009     Lab9HMain.o (.rodata._ZL15Language_French)
+                  00004902    00000009     WordleGame.o (.rodata.str1.131474662637326315751)
+                  0000490b    00000008     Lab9HMain.o (.rodata._ZL15Goodbye_English)
+                  00004913    00000008     Lab9HMain.o (.rodata._ZL16Language_English)
+                  0000491b    00000008     Lab9HMain.o (.rodata._ZL16Language_Spanish)
+                  00004923    00000008     ST7735.o (.rodata.str1.165130416995881079241)
+                  0000492b    00000007     Lab9HMain.o (.rodata._ZL13Hello_Spanish)
+                  00004932    00000007     ST7735.o (.rodata.str1.14967734073928701621)
+                  00004939    00000007     WordleGame.o (.rodata.str1.35840351737801994681)
+                  00004940    00000007     ST7735.o (.rodata.str1.60681175223723731221)
+                  00004947    00000007     WordleGame.o (.rodata.str1.7308896730112272341)
+                  0000494e    00000007     WordleGame.o (.rodata.str1.82935527524483419921)
+                  00004955    00000006     Lab9HMain.o (.rodata._ZL13Hello_English)
+                  0000495b    00000006     Lab9HMain.o (.rodata._ZL15Goodbye_Spanish)
+                  00004961    00000006     Lab9HMain.o (.rodata._ZL18Goodbye_Portuguese)
+                  00004967    00000006     WordleGame.o (.rodata.str1.100211898943770798951)
+                  0000496d    00000006     WordleGame.o (.rodata.str1.102289325160829366641)
+                  00004973    00000006     WordleGame.o (.rodata.str1.102647758357168982541)
+                  00004979    00000006     WordleGame.o (.rodata.str1.103705717010167579851)
+                  0000497f    00000006     WordleGame.o (.rodata.str1.104504314886199882241)
+                  00004985    00000006     WordleGame.o (.rodata.str1.105547330015310333311)
+                  0000498b    00000006     WordleGame.o (.rodata.str1.105764545211864813121)
+                  00004991    00000006     WordleGame.o (.rodata.str1.105986441664677859961)
+                  00004997    00000006     WordleGame.o (.rodata.str1.106678151570353777941)
+                  0000499d    00000006     WordleGame.o (.rodata.str1.107312261369178368201)
+                  000049a3    00000006     WordleGame.o (.rodata.str1.107486912585070913521)
+                  000049a9    00000006     WordleGame.o (.rodata.str1.108637367619508216891)
+                  000049af    00000006     WordleGame.o (.rodata.str1.10914531269792131571)
+                  000049b5    00000006     WordleGame.o (.rodata.str1.110030278422838090121)
+                  000049bb    00000006     WordleGame.o (.rodata.str1.111134610000166696531)
+                  000049c1    00000006     WordleGame.o (.rodata.str1.116041440632502798661)
+                  000049c7    00000006     WordleGame.o (.rodata.str1.116546509652999555421)
+                  000049cd    00000006     WordleGame.o (.rodata.str1.118877655396078123111)
+                  000049d3    00000006     WordleGame.o (.rodata.str1.121333130284278595251)
+                  000049d9    00000006     WordleGame.o (.rodata.str1.122039964236393353201)
+                  000049df    00000006     WordleGame.o (.rodata.str1.122519123621740600101)
+                  000049e5    00000006     WordleGame.o (.rodata.str1.123092802620990954491)
+                  000049eb    00000006     WordleGame.o (.rodata.str1.123219042693360469791)
+                  000049f1    00000006     WordleGame.o (.rodata.str1.123754005992812413951)
+                  000049f7    00000006     WordleGame.o (.rodata.str1.124545995331261801571)
+                  000049fd    00000006     WordleGame.o (.rodata.str1.125486247373581825671)
+                  00004a03    00000006     WordleGame.o (.rodata.str1.126115242575436107191)
+                  00004a09    00000006     WordleGame.o (.rodata.str1.126469529609144096131)
+                  00004a0f    00000006     WordleGame.o (.rodata.str1.128682111537259109761)
+                  00004a15    00000006     WordleGame.o (.rodata.str1.12889767578439089011)
+                  00004a1b    00000006     WordleGame.o (.rodata.str1.12942647238549284661)
+                  00004a21    00000006     WordleGame.o (.rodata.str1.129961064403475391491)
+                  00004a27    00000006     WordleGame.o (.rodata.str1.131020301823211586711)
+                  00004a2d    00000006     WordleGame.o (.rodata.str1.1315684594665672371)
+                  00004a33    00000006     WordleGame.o (.rodata.str1.131667766231367125311)
+                  00004a39    00000006     WordleGame.o (.rodata.str1.135181948287306408061)
+                  00004a3f    00000006     WordleGame.o (.rodata.str1.135676866278341599591)
+                  00004a45    00000006     WordleGame.o (.rodata.str1.136475641683510573981)
+                  00004a4b    00000006     WordleGame.o (.rodata.str1.137403052635660330251)
+                  00004a51    00000006     WordleGame.o (.rodata.str1.138082086807827771331)
+                  00004a57    00000006     WordleGame.o (.rodata.str1.13835650567263837321)
+                  00004a5d    00000006     WordleGame.o (.rodata.str1.140015117619321807781)
+                  00004a63    00000006     WordleGame.o (.rodata.str1.140062488479378501991)
+                  00004a69    00000006     WordleGame.o (.rodata.str1.141484617079658950401)
+                  00004a6f    00000006     WordleGame.o (.rodata.str1.141983166042977355431)
+                  00004a75    00000006     WordleGame.o (.rodata.str1.142012279581080431571)
+                  00004a7b    00000006     WordleGame.o (.rodata.str1.14692876021657110031)
+                  00004a81    00000006     WordleGame.o (.rodata.str1.150497049820615873381)
+                  00004a87    00000006     WordleGame.o (.rodata.str1.151395822238046656001)
+                  00004a8d    00000006     WordleGame.o (.rodata.str1.151960602840341485591)
+                  00004a93    00000006     WordleGame.o (.rodata.str1.152184197771811015691)
+                  00004a99    00000006     WordleGame.o (.rodata.str1.154598987379375063671)
+                  00004a9f    00000006     WordleGame.o (.rodata.str1.154981564734446237771)
+                  00004aa5    00000006     WordleGame.o (.rodata.str1.15561009426816496541)
+                  00004aab    00000006     WordleGame.o (.rodata.str1.155673582422851915731)
+                  00004ab1    00000006     WordleGame.o (.rodata.str1.156037103590171623361)
+                  00004ab7    00000006     WordleGame.o (.rodata.str1.159431824000989726341)
+                  00004abd    00000006     WordleGame.o (.rodata.str1.159730141383585502691)
+                  00004ac3    00000006     WordleGame.o (.rodata.str1.160248730669119083881)
+                  00004ac9    00000006     WordleGame.o (.rodata.str1.162353248776023684281)
+                  00004acf    00000006     WordleGame.o (.rodata.str1.162554896588626967391)
+                  00004ad5    00000006     WordleGame.o (.rodata.str1.167101355209510009931)
+                  00004adb    00000006     WordleGame.o (.rodata.str1.167604606732926266411)
+                  00004ae1    00000006     WordleGame.o (.rodata.str1.168475649022977584891)
+                  00004ae7    00000006     WordleGame.o (.rodata.str1.168566727068844682111)
+                  00004aed    00000006     WordleGame.o (.rodata.str1.168716649165563547211)
+                  00004af3    00000006     WordleGame.o (.rodata.str1.170103727670761799201)
+                  00004af9    00000006     WordleGame.o (.rodata.str1.171486628207341764971)
+                  00004aff    00000006     WordleGame.o (.rodata.str1.172694230226483926971)
+                  00004b05    00000006     WordleGame.o (.rodata.str1.172789317785640506981)
+                  00004b0b    00000006     WordleGame.o (.rodata.str1.17306224584781716731)
+                  00004b11    00000006     WordleGame.o (.rodata.str1.173395571532369890931)
+                  00004b17    00000006     WordleGame.o (.rodata.str1.1763167243012763411)
+                  00004b1d    00000006     WordleGame.o (.rodata.str1.177447720748001300491)
+                  00004b23    00000006     WordleGame.o (.rodata.str1.178866494874651556591)
+                  00004b29    00000006     WordleGame.o (.rodata.str1.179588403393159235081)
+                  00004b2f    00000006     WordleGame.o (.rodata.str1.180345381184526301171)
+                  00004b35    00000006     WordleGame.o (.rodata.str1.180948822596371157541)
+                  00004b3b    00000006     WordleGame.o (.rodata.str1.181071556441401631071)
+                  00004b41    00000006     WordleGame.o (.rodata.str1.182239896311540422091)
+                  00004b47    00000006     WordleGame.o (.rodata.str1.18608662179736005181)
+                  00004b4d    00000006     WordleGame.o (.rodata.str1.19226092167621632051)
+                  00004b53    00000006     WordleGame.o (.rodata.str1.19956066189783772341)
+                  00004b59    00000006     WordleGame.o (.rodata.str1.20165804997311776131)
+                  00004b5f    00000006     WordleGame.o (.rodata.str1.20248978232381870291)
+                  00004b65    00000006     WordleGame.o (.rodata.str1.20613371459798219361)
+                  00004b6b    00000006     WordleGame.o (.rodata.str1.20642291126609054251)
+                  00004b71    00000006     WordleGame.o (.rodata.str1.20862340222831721061)
+                  00004b77    00000006     WordleGame.o (.rodata.str1.23484519677256635151)
+                  00004b7d    00000006     WordleGame.o (.rodata.str1.2465193610834565811)
+                  00004b83    00000006     WordleGame.o (.rodata.str1.25698872978391167291)
+                  00004b89    00000006     WordleGame.o (.rodata.str1.25753431772352172841)
+                  00004b8f    00000006     WordleGame.o (.rodata.str1.27217704306512246681)
+                  00004b95    00000006     WordleGame.o (.rodata.str1.27573827727161330821)
+                  00004b9b    00000006     WordleGame.o (.rodata.str1.28799035979729287181)
+                  00004ba1    00000006     WordleGame.o (.rodata.str1.29554799494454641871)
+                  00004ba7    00000006     WordleGame.o (.rodata.str1.30630397437140785331)
+                  00004bad    00000006     WordleGame.o (.rodata.str1.31582237791567878361)
+                  00004bb3    00000006     WordleGame.o (.rodata.str1.36943449861432733591)
+                  00004bb9    00000006     WordleGame.o (.rodata.str1.3730595491080330581)
+                  00004bbf    00000006     WordleGame.o (.rodata.str1.37538915677486320221)
+                  00004bc5    00000006     WordleGame.o (.rodata.str1.38452123595751935951)
+                  00004bcb    00000006     WordleGame.o (.rodata.str1.38923391493191315261)
+                  00004bd1    00000006     WordleGame.o (.rodata.str1.39393655612473002881)
+                  00004bd7    00000006     WordleGame.o (.rodata.str1.40653665784502847901)
+                  00004bdd    00000006     WordleGame.o (.rodata.str1.41079451491502217591)
+                  00004be3    00000006     WordleGame.o (.rodata.str1.41199764970231613641)
+                  00004be9    00000006     WordleGame.o (.rodata.str1.42486200843923454911)
+                  00004bef    00000006     WordleGame.o (.rodata.str1.44336148740769702281)
+                  00004bf5    00000006     WordleGame.o (.rodata.str1.4659538507125653191)
+                  00004bfb    00000006     WordleGame.o (.rodata.str1.46818371285609338011)
+                  00004c01    00000006     WordleGame.o (.rodata.str1.46839494769367986831)
+                  00004c07    00000006     WordleGame.o (.rodata.str1.51389305772547780601)
+                  00004c0d    00000006     WordleGame.o (.rodata.str1.52941374820716429641)
+                  00004c13    00000006     WordleGame.o (.rodata.str1.52986354855400342561)
+                  00004c19    00000006     WordleGame.o (.rodata.str1.53576692458800988431)
+                  00004c1f    00000006     WordleGame.o (.rodata.str1.53994308507185227771)
+                  00004c25    00000006     WordleGame.o (.rodata.str1.54490288628092946331)
+                  00004c2b    00000006     WordleGame.o (.rodata.str1.56661482728737364881)
+                  00004c31    00000006     WordleGame.o (.rodata.str1.57671318834769097191)
+                  00004c37    00000006     WordleGame.o (.rodata.str1.58977658968077342261)
+                  00004c3d    00000006     WordleGame.o (.rodata.str1.61110895705630400881)
+                  00004c43    00000006     WordleGame.o (.rodata.str1.64011743092912324701)
+                  00004c49    00000006     WordleGame.o (.rodata.str1.6437616216709088141)
+                  00004c4f    00000006     WordleGame.o (.rodata.str1.67229496894366479181)
+                  00004c55    00000006     WordleGame.o (.rodata.str1.6834237753506238621)
+                  00004c5b    00000006     WordleGame.o (.rodata.str1.69407284255400186421)
+                  00004c61    00000006     WordleGame.o (.rodata.str1.70998995280619240081)
+                  00004c67    00000006     WordleGame.o (.rodata.str1.71301204813928149711)
+                  00004c6d    00000006     WordleGame.o (.rodata.str1.73408887295954789781)
+                  00004c73    00000006     WordleGame.o (.rodata.str1.74245794377941360211)
+                  00004c79    00000006     WordleGame.o (.rodata.str1.75027122851678697081)
+                  00004c7f    00000006     WordleGame.o (.rodata.str1.75867722558457050831)
+                  00004c85    00000006     WordleGame.o (.rodata.str1.76263337480006503241)
+                  00004c8b    00000006     WordleGame.o (.rodata.str1.77018201506713798891)
+                  00004c91    00000006     WordleGame.o (.rodata.str1.80241692245423876041)
+                  00004c97    00000006     WordleGame.o (.rodata.str1.80278064760027430071)
+                  00004c9d    00000006     WordleGame.o (.rodata.str1.82712379085115301041)
+                  00004ca3    00000006     WordleGame.o (.rodata.str1.82763019841201594431)
+                  00004ca9    00000006     WordleGame.o (.rodata.str1.83260633136383911301)
+                  00004caf    00000006     WordleGame.o (.rodata.str1.84420509940500032511)
+                  00004cb5    00000006     WordleGame.o (.rodata.str1.85997846529358344791)
+                  00004cbb    00000006     WordleGame.o (.rodata.str1.92175020259877704171)
+                  00004cc1    00000006     WordleGame.o (.rodata.str1.94731114197210113481)
+                  00004cc7    00000006     WordleGame.o (.rodata.str1.95777269638292565551)
+                  00004ccd    00000006     WordleGame.o (.rodata.str1.95900345535941943101)
+                  00004cd3    00000006     WordleGame.o (.rodata.str1.97250656463443798481)
+                  00004cd9    00000006     WordleGame.o (.rodata.str1.9727066560968368401)
+                  00004cdf    00000006     WordleGame.o (.rodata.str1.98099362813943969311)
+                  00004ce5    00000005     Lab9HMain.o (.rodata._ZL12Hello_French)
+                  00004cea    00000004     Lab9HMain.o (.rodata._ZL16Hello_Portuguese)
+                  00004cee    00000002     ST7735.o (.rodata.str1.4886276144285447061)
+
+.init_array 
+*          0    00004cf0    00000008     
+                  00004cf0    00000004     Lab9HMain.o (.init_array)
+                  00004cf4    00000004     --HOLE-- [fill = 0]
+
+.data      0    20200000    000004ad     UNINITIALIZED
+                  20200000    00000260     WordleGame.o (.data.wordList)
+                  20200260    000000f0     libc.a : defs.c.obj (.data._ftable)
+                  20200350    00000078     libsysbm.a : host_device.c.obj (.data._device)
+                  202003c8    00000050                : host_device.c.obj (.data._stream)
+                  20200418    00000030     Lab9HMain.o (.data.Phrases)
+                  20200448    00000014     Lab9HMain.o (.data.Cursor)
+                  2020045c    00000014     Lab9HMain.o (.data.Sensor)
+                  20200470    00000008     libc.a : exit.c.obj (.data..L_MergedGlobals)
+                  20200478    00000004     Clock.o (.data.BusFreq)
+                  2020047c    00000004     WordleGame.o (.data.CHScore)
+                  20200480    00000004     ST7735.o (.data.StX)
+                  20200484    00000004     ST7735.o (.data.StY)
+                  20200488    00000004     libc.a : defs.c.obj (.data.__TI_ft_end)
+                  2020048c    00000004            : _lock.c.obj (.data._lock)
+                  20200490    00000004            : _lock.c.obj (.data._unlock)
+                  20200494    00000004            : rand.c.obj (.data.next)
+                  20200498    00000004     WordleGame.o (.data.space)
+                  2020049c    00000002     ST7735.o (.data.StTextColor)
+                  2020049e    00000002     ST7735.o (.data._ZL6_width)
+                  202004a0    00000002     ST7735.o (.data._ZL7_height)
+                  202004a2    00000001     Sound.o (.data._ZL12SoundPlaying)
+                  202004a3    00000001     WordleGame.o (.data.colon)
+                  202004a4    00000001     libsysbm.a : add_device.c.obj (.data.add_device.device_init)
+                  202004a5    00000001     Lab9HMain.o (.data.cursorPosition)
+                  202004a6    00000001     Lab9HMain.o (.data.myLanguage)
+                  202004a7    00000001     Lab9HMain.o (.data.semaphore)
+                  202004a8    00000001     libc.a : memory.c.obj (.data.memory_is_initialized)
+                  202004a9    00000003     --HOLE--
+                  202004ac    00000001     libsysbm.a : open.c.obj (.data.open.stream_init)
+
+.bss       0    202004b0    00000242     UNINITIALIZED
+                  202004b0    00000120     libsysbm.a : trgmsg.c.obj (.bss:_CIOBUF_)
+                  202005d0    000000a0     libc.a : defs.c.obj (.bss.__TI_tmpnams)
+                  20200670    0000001e     WordleGame.o (.bss.letterStatus)
+                  2020068e    0000001e     WordleGame.o (.bss.savedGuesses)
+                  202006ac    0000000c     ST7735.o (.bss.Message)
+                  202006b8    00000008     libsysbm.a : hostopen.c.obj (.bss.parmbuf)
+                  202006c0    00000006     WordleGame.o (.bss.currentGuess)
+                  202006c6    00000006     WordleGame.o (.bss.targetWord)
+                  202006cc    00000004     ST7735.o (.bss.Messageindex)
+                  202006d0    00000004     TExaS.o (.bss.TExaSLogic)
+                  202006d4    00000004     TExaS.o (.bss.TExaSadc)
+                  202006d8    00000004     Sound.o (.bss._ZL10SoundIndex)
+                  202006dc    00000004     Sound.o (.bss._ZL11SoundLength)
+                  202006e0    00000004     Sound.o (.bss._ZL8SoundPtr)
+                  202006e4    00000004     libc.a : memory.c.obj (.bss.sys_free)
+                  202006e8    00000002     WordleGame.o (.bss.maxScore)
+                  202006ea    00000002     WordleGame.o (.bss.score)
+                  202006ec    00000001     ST7735.o (.bss._ZL8ColStart)
+                  202006ed    00000001     ST7735.o (.bss._ZL8RowStart)
+                  202006ee    00000001     ST7735.o (.bss._ZL8TabColor)
+                  202006ef    00000001     WordleGame.o (.bss.currentRow)
+                  202006f0    00000001     WordleGame.o (.bss.gameRunning)
+                  202006f1    00000001     WordleGame.o (.bss.gameWon)
+
+.sysmem    0    202006f8    00000200     UNINITIALIZED
+                  202006f8    00000010     libc.a : memory.c.obj (.sysmem)
+                  20200708    000001f0     --HOLE--
+
+.stack     0    20207e00    00000200     UNINITIALIZED
+                  20207e00    00000004     libc.a : boot_cortex_m.c.obj (.stack)
+                  20207e04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20200000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20200000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\
+       ST7735.o                       2902    1449      33     
+       Sound.o                        256     3802      13     
+       WordleGame.o                   1804    1140      696    
+       Lab9HMain.o                    1168    108       91     
+       Clock.o                        548     0         4      
+       SPI.o                          440     0         0      
+       SlidePot.o                     250     0         0      
+       Timer.o                        244     0         0      
+       LaunchPad.o                    180     0         0      
+       Switch.o                       156     0         0      
+       DAC5.o                         128     0         0      
+       TExaS.o                        64      0         8      
+       LED.o                          52      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         8192    6499      845    
+                                                               
+    .\ticlang\
+       startup_mspm0g3507_ticlang.o   60      192       0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         60      192       0      
+                                                               
+    C:\ti\ccs2000\ccs\tools\compiler\ti-cgt-armllvm_4.0.1.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       memory.c.obj                   702     0         5      
+       fopen.c.obj                    556     0         0      
+       defs.c.obj                     0       0         404    
+       setvbuf.c.obj                  224     0         0      
+       getdevice.c.obj                160     0         0      
+       strcmp-armv6m.S.obj            136     0         0      
+       copy_decompress_lzss.c.obj     124     0         0      
+       fclose.c.obj                   124     0         0      
+       autoinit.c.obj                 84      0         0      
+       fflush.c.obj                   82      0         0      
+       exit.c.obj                     56      0         8      
+       rand.c.obj                     56      0         4      
+       boot_cortex_m.c.obj            40      0         0      
+       copy_zero_init.c.obj           22      0         0      
+       copy_decompress_none.c.obj     18      0         0      
+       memcpy16.S.obj                 18      0         0      
+       memset16.S.obj                 14      0         0      
+       strcpy.c.obj                   14      0         0      
+       _lock.c.obj                    2       0         8      
+       pre_init.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         2436    0         429    
+                                                               
+    C:\ti\ccs2000\ccs\tools\compiler\ti-cgt-armllvm_4.0.1.LTS\lib\armv6m-ti-none-eabi/c/libsysbm.a
+       trgmsg.c.obj                   104     0         288    
+       add_device.c.obj               236     0         1      
+       host_device.c.obj              0       0         200    
+       open.c.obj                     160     0         1      
+       hostrename.c.obj               136     0         0      
+       hostlseek.c.obj                108     0         0      
+       hostopen.c.obj                 96      0         8      
+       hostread.c.obj                 88      0         0      
+       hostwrite.c.obj                88      0         0      
+       close.c.obj                    80      0         0      
+       hostclose.c.obj                72      0         0      
+       hostunlink.c.obj               72      0         0      
+       unlink.c.obj                   44      0         0      
+       write.c.obj                    40      0         0      
+       remove.c.obj                   8       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1332    0         498    
+                                                               
+    C:\ti\ccs2000\ccs\tools\compiler\ti-cgt-armllvm_4.0.1.LTS\lib\armv6m-ti-none-eabi/libclang_rt.builtins.a
+       adddf3.S.obj                   402     0         0      
+       muldf3.S.obj                   228     0         0      
+       aeabi_idivmod.S.obj            86      0         0      
+       fixunsdfsi.S.obj               66      0         0      
+       aeabi_uidivmod.S.obj           64      0         0      
+       muldsi3.S.obj                  58      0         0      
+       floatsidf.S.obj                44      0         0      
+       aeabi_memset.S.obj             12      0         0      
+       aeabi_memcpy.S.obj             8       0         0      
+       aeabi_div0.c.obj               2       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         970     0         0      
+                                                               
+       Heap:                          0       0         512    
+       Stack:                         0       0         512    
+       Linker Generated:              0       685       0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   12990   7376      2796   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00004f98 records: 2, size/record: 8, table size: 16
+	.data: load addr=00004cf8, load size=00000289 bytes, run addr=20200000, run size=000004ad bytes, compression=lzss
+	.bss: load addr=00004f90, load size=00000008 bytes, run addr=202004b0, run size=00000242 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00004f84 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                        
+-------   ----                        
+00003189  ADC0_IRQHandler             
+00003189  ADC1_IRQHandler             
+00003189  AES_IRQHandler              
+20200478  BusFreq                     
+0000338c  C$$EXIT                     
+00002e39  C$$IO$$                     
+00003189  CANFD0_IRQHandler           
+2020047c  CHScore                     
+20200448  Cursor                      
+00003189  DAC0_IRQHandler             
+00003189  DMA_IRQHandler              
+00003189  Default_Handler             
+00003189  GROUP0_IRQHandler           
+00003189  GROUP1_IRQHandler           
+00002865  HOSTclose                   
+000022a1  HOSTlseek                   
+00002449  HOSTopen                    
+000025c1  HOSTread                    
+0000230d  HOSTrename                  
+000028ad  HOSTunlink                  
+00002619  HOSTwrite                   
+000031a5  HardFault_Handler           
+00003189  I2C0_IRQHandler             
+00003189  I2C1_IRQHandler             
+202006ac  Message                     
+202006cc  Messageindex                
+00003189  NMI_Handler                 
+00003189  PendSV_Handler              
+20200418  Phrases                     
+00003189  RTC_IRQHandler              
+00003385  Reset_Handler               
+00004cf0  SHT$$INIT_ARRAY$$Base       
+00004cf4  SHT$$INIT_ARRAY$$Limit      
+00003189  SPI0_IRQHandler             
+00003189  SPI1_IRQHandler             
+00003189  SVC_Handler                 
+2020045c  Sensor                      
+2020049c  StTextColor                 
+20200480  StX                         
+20200484  StY                         
+00003363  SysTick_Handler             
+202006d0  TExaSLogic                  
+202006d4  TExaSadc                    
+00003189  TIMA0_IRQHandler            
+00003189  TIMA1_IRQHandler            
+00003189  TIMG0_IRQHandler            
+000002e5  TIMG12_IRQHandler           
+00003189  TIMG6_IRQHandler            
+00002a51  TIMG7_IRQHandler            
+00003189  TIMG8_IRQHandler            
+0000328d  TI_memcpy_small             
+00003307  TI_memset_small             
+00003189  UART0_IRQHandler            
+00003189  UART1_IRQHandler            
+00003189  UART2_IRQHandler            
+00003189  UART3_IRQHandler            
+202004b0  _CIOBUF_                    
+00003315  _Z10Clock_Freqv             
+0000336b  _Z10Sound_Initv             
+000032b1  _Z11Clock_Delayj            
+00002b8d  _Z11SPI_OutDatac            
+0000320d  _Z11ST7735_openPKcji        
+00003223  _Z11ST7735_readiPcj         
+00002c6d  _Z11Sound_StartPKhj         
+00002ff5  _Z11Switch_Initv            
+000026c9  _Z11fillmessagej            
+00001cf1  _Z12ST7735_InitR10initRFlags
+00003345  _Z12ST7735_closei           
+000032cf  _Z12ST7735_lseekili         
+00002ca1  _Z12ST7735_writeiPKcj       
+00002509  _Z12Sound_Updatev           
+00003129  _Z12SysTick_Initv           
+000019a1  _Z12startNewGamev           
+000027c5  _Z13Button_IntArmh          
+00003321  _Z13ST7735_renamePKcS0_     
+0000334f  _Z13ST7735_unlinkPKc        
+000024a9  _Z13TimerG12_Initv          
+000018dd  _Z13drawGameBoardv          
+00000705  _Z13drawLetterBoxhh         
+000000c1  _Z13evaluateGuessv          
+00002cd5  _Z14Clock_Delay1msj         
+00002041  _Z14LaunchPad_Initv         
+000028f5  _Z14SPI_OutCommandc         
+0000180d  _Z14ST7735_OutCharc         
+00001f39  _Z14ST7735_OutUDecj         
+00002bc5  _Z14SysTick_IntArmjj        
+00002985  _Z14isWordCompletev         
+00000ef5  _Z14selectLanguagev         
+00002bfd  _Z15ActivatePortA_Bv        
+000008b9  _Z15Clock_Init80MHzi        
+00002edd  _Z15ST7735_Color565hhh      
+0000103d  _Z15ST7735_FillRectsssst    
+00003265  _Z15Sound_Explosionv        
+00003279  _Z15Sound_Highpitchv        
+00001d89  _Z15TimerG12_IntArmjj       
+000030bd  _Z15WordleGame_Initv        
+00000a6d  _Z16ST7735_DrawCharSsscssh  
+00002231  _Z16ST7735_DrawPixelsst     
+00003095  _Z16ST7735_OutStringPc      
+00002d09  _Z16ST7735_SetCursorjj      
+000004f5  _Z17ST7735_DrawBitmapssPKtss
+00001fbd  _Z17ST7735_DrawStringttPcs  
+00002f71  _Z17ST7735_FillScreent      
+00001c55  _Z17ST7735_InitPrintfv      
+00002d3d  _Z17updateGameDisplayv      
+00001155  _Z20displayEndGameScreenv   
+000029c9  _Z5sleepj                   
+000030e1  _Z8DAC5_Outj                
+00002d71  _Z8LED_Initv                
+00003359  _Z8PLL_Initv                
+0000137d  _Z8SPI_Initv                
+00002565  _Z9DAC5_Initv               
+00002a91  _Z9SPI_Resetv               
+00003105  _Z9Switch_Inv               
+0000293d  _ZN8SlidePot2InEv           
+000020bd  _ZN8SlidePot4InitEv         
+00003149  _ZN8SlidePot7ConvertEj      
+00003239  _ZN8SlidePotC1Ejj           
+00003239  _ZN8SlidePotC2Ejj           
+202004b0  __CIOBUF_                   
+20208000  __STACK_END                 
+00000200  __STACK_SIZE                
+00000200  __SYSMEM_SIZE               
+00000000  __TI_ATRegion0_region_sz    
+00000000  __TI_ATRegion0_src_addr     
+00000000  __TI_ATRegion0_trg_addr     
+00000000  __TI_ATRegion1_region_sz    
+00000000  __TI_ATRegion1_src_addr     
+00000000  __TI_ATRegion1_trg_addr     
+00000000  __TI_ATRegion2_region_sz    
+00000000  __TI_ATRegion2_src_addr     
+00000000  __TI_ATRegion2_trg_addr     
+00004f98  __TI_CINIT_Base             
+00004fa8  __TI_CINIT_Limit            
+00004fa8  __TI_CINIT_Warm             
+00004f84  __TI_Handler_Table_Base     
+00004f90  __TI_Handler_Table_Limit    
+0000271d  __TI_auto_init_nobinit      
+00002da5  __TI_cleanup                
+20200470  __TI_cleanup_ptr            
+00002139  __TI_closefile              
+000021b5  __TI_decompress_lzss        
+0000329f  __TI_decompress_none        
+00002771  __TI_doflush                
+20200474  __TI_dtors_ptr              
+20200488  __TI_ft_end                 
+ffffffff  __TI_pprof_out_hndl         
+ffffffff  __TI_prof_data_size         
+ffffffff  __TI_prof_data_start        
+00002dd9  __TI_readmsg                
+00000000  __TI_static_base__          
+202005d0  __TI_tmpnams                
+00002e0d  __TI_writemsg               
+0000324f  __TI_zero_init_nomemset     
+00000c17  __adddf3                    
+00002a0d  __aeabi_d2uiz               
+00000c17  __aeabi_dadd                
+00001649  __aeabi_dmul                
+00000c0d  __aeabi_dsub                
+00002f9d  __aeabi_i2d                 
+00002671  __aeabi_idiv                
+00000d9f  __aeabi_idiv0               
+00002671  __aeabi_idivmod             
+0000332d  __aeabi_memclr              
+0000332d  __aeabi_memclr4             
+0000332d  __aeabi_memclr8             
+00003375  __aeabi_memcpy              
+00003375  __aeabi_memcpy4             
+00003375  __aeabi_memcpy8             
+00002ad1  __aeabi_uidiv               
+00002ad1  __aeabi_uidivmod            
+ffffffff  __binit__                   
+00002a0d  __fixunsdfsi                
+00002f9d  __floatsidf                 
+UNDEFED   __mpu_init                  
+00001649  __muldf3                    
+00002b51  __muldsi3                   
+20207e00  __stack                     
+20200000  __start___llvm_prf_bits     
+20200000  __start___llvm_prf_cnts     
+20200000  __stop___llvm_prf_bits      
+20200000  __stop___llvm_prf_cnts      
+00000c0d  __subdf3                    
+0000306d  _c_int00_noargs             
+20200350  _device                     
+20200260  _ftable                     
+2020048c  _lock                       
+00001bb3  _nop                        
+202003c8  _stream                     
+202006f8  _sys_memory                 
+UNDEFED   _system_post_cinit          
+00003389  _system_pre_init            
+20200490  _unlock                     
+0000338d  abort                       
+00001475  add_device                  
+00001269  aligned_alloc               
+ffffffff  binit                       
+00002815  close                       
+202004a3  colon                       
+202006c0  currentGuess                
+202006ef  currentRow                  
+202004a5  cursorPosition              
+00002e41  exit                        
+00002e75  finddevice                  
+00002f41  fopen                       
+00001561  free                        
+00002ea9  freopen                     
+202006f0  gameRunning                 
+202006f1  gameWon                     
+00002379  getdevice                   
+00000000  interruptVectors            
+20200670  letterStatus                
+00001a61  main                        
+00003339  malloc                      
+202006e8  maxScore                    
+00001269  memalign                    
+202004a6  myLanguage                  
+00001bb5  open                        
+202006b8  parmbuf                     
+00002c35  rand                        
+0000337d  remove                      
+2020068e  savedGuesses                
+202006ea  score                       
+202004a7  semaphore                   
+0000172d  setvbuf                     
+20200498  space                       
+00001eb1  strcmp                      
+000032dd  strcpy                      
+202006c6  targetWord                  
+00002fc9  unlink                      
+20200000  wordList                    
+00003045  write                       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                        
+-------   ----                        
+00000000  __TI_ATRegion0_region_sz    
+00000000  __TI_ATRegion0_src_addr     
+00000000  __TI_ATRegion0_trg_addr     
+00000000  __TI_ATRegion1_region_sz    
+00000000  __TI_ATRegion1_src_addr     
+00000000  __TI_ATRegion1_trg_addr     
+00000000  __TI_ATRegion2_region_sz    
+00000000  __TI_ATRegion2_src_addr     
+00000000  __TI_ATRegion2_trg_addr     
+00000000  __TI_static_base__          
+00000000  interruptVectors            
+000000c1  _Z13evaluateGuessv          
+00000200  __STACK_SIZE                
+00000200  __SYSMEM_SIZE               
+000002e5  TIMG12_IRQHandler           
+000004f5  _Z17ST7735_DrawBitmapssPKtss
+00000705  _Z13drawLetterBoxhh         
+000008b9  _Z15Clock_Init80MHzi        
+00000a6d  _Z16ST7735_DrawCharSsscssh  
+00000c0d  __aeabi_dsub                
+00000c0d  __subdf3                    
+00000c17  __adddf3                    
+00000c17  __aeabi_dadd                
+00000d9f  __aeabi_idiv0               
+00000ef5  _Z14selectLanguagev         
+0000103d  _Z15ST7735_FillRectsssst    
+00001155  _Z20displayEndGameScreenv   
+00001269  aligned_alloc               
+00001269  memalign                    
+0000137d  _Z8SPI_Initv                
+00001475  add_device                  
+00001561  free                        
+00001649  __aeabi_dmul                
+00001649  __muldf3                    
+0000172d  setvbuf                     
+0000180d  _Z14ST7735_OutCharc         
+000018dd  _Z13drawGameBoardv          
+000019a1  _Z12startNewGamev           
+00001a61  main                        
+00001bb3  _nop                        
+00001bb5  open                        
+00001c55  _Z17ST7735_InitPrintfv      
+00001cf1  _Z12ST7735_InitR10initRFlags
+00001d89  _Z15TimerG12_IntArmjj       
+00001eb1  strcmp                      
+00001f39  _Z14ST7735_OutUDecj         
+00001fbd  _Z17ST7735_DrawStringttPcs  
+00002041  _Z14LaunchPad_Initv         
+000020bd  _ZN8SlidePot4InitEv         
+00002139  __TI_closefile              
+000021b5  __TI_decompress_lzss        
+00002231  _Z16ST7735_DrawPixelsst     
+000022a1  HOSTlseek                   
+0000230d  HOSTrename                  
+00002379  getdevice                   
+00002449  HOSTopen                    
+000024a9  _Z13TimerG12_Initv          
+00002509  _Z12Sound_Updatev           
+00002565  _Z9DAC5_Initv               
+000025c1  HOSTread                    
+00002619  HOSTwrite                   
+00002671  __aeabi_idiv                
+00002671  __aeabi_idivmod             
+000026c9  _Z11fillmessagej            
+0000271d  __TI_auto_init_nobinit      
+00002771  __TI_doflush                
+000027c5  _Z13Button_IntArmh          
+00002815  close                       
+00002865  HOSTclose                   
+000028ad  HOSTunlink                  
+000028f5  _Z14SPI_OutCommandc         
+0000293d  _ZN8SlidePot2InEv           
+00002985  _Z14isWordCompletev         
+000029c9  _Z5sleepj                   
+00002a0d  __aeabi_d2uiz               
+00002a0d  __fixunsdfsi                
+00002a51  TIMG7_IRQHandler            
+00002a91  _Z9SPI_Resetv               
+00002ad1  __aeabi_uidiv               
+00002ad1  __aeabi_uidivmod            
+00002b51  __muldsi3                   
+00002b8d  _Z11SPI_OutDatac            
+00002bc5  _Z14SysTick_IntArmjj        
+00002bfd  _Z15ActivatePortA_Bv        
+00002c35  rand                        
+00002c6d  _Z11Sound_StartPKhj         
+00002ca1  _Z12ST7735_writeiPKcj       
+00002cd5  _Z14Clock_Delay1msj         
+00002d09  _Z16ST7735_SetCursorjj      
+00002d3d  _Z17updateGameDisplayv      
+00002d71  _Z8LED_Initv                
+00002da5  __TI_cleanup                
+00002dd9  __TI_readmsg                
+00002e0d  __TI_writemsg               
+00002e39  C$$IO$$                     
+00002e41  exit                        
+00002e75  finddevice                  
+00002ea9  freopen                     
+00002edd  _Z15ST7735_Color565hhh      
+00002f41  fopen                       
+00002f71  _Z17ST7735_FillScreent      
+00002f9d  __aeabi_i2d                 
+00002f9d  __floatsidf                 
+00002fc9  unlink                      
+00002ff5  _Z11Switch_Initv            
+00003045  write                       
+0000306d  _c_int00_noargs             
+00003095  _Z16ST7735_OutStringPc      
+000030bd  _Z15WordleGame_Initv        
+000030e1  _Z8DAC5_Outj                
+00003105  _Z9Switch_Inv               
+00003129  _Z12SysTick_Initv           
+00003149  _ZN8SlidePot7ConvertEj      
+00003189  ADC0_IRQHandler             
+00003189  ADC1_IRQHandler             
+00003189  AES_IRQHandler              
+00003189  CANFD0_IRQHandler           
+00003189  DAC0_IRQHandler             
+00003189  DMA_IRQHandler              
+00003189  Default_Handler             
+00003189  GROUP0_IRQHandler           
+00003189  GROUP1_IRQHandler           
+00003189  I2C0_IRQHandler             
+00003189  I2C1_IRQHandler             
+00003189  NMI_Handler                 
+00003189  PendSV_Handler              
+00003189  RTC_IRQHandler              
+00003189  SPI0_IRQHandler             
+00003189  SPI1_IRQHandler             
+00003189  SVC_Handler                 
+00003189  TIMA0_IRQHandler            
+00003189  TIMA1_IRQHandler            
+00003189  TIMG0_IRQHandler            
+00003189  TIMG6_IRQHandler            
+00003189  TIMG8_IRQHandler            
+00003189  UART0_IRQHandler            
+00003189  UART1_IRQHandler            
+00003189  UART2_IRQHandler            
+00003189  UART3_IRQHandler            
+000031a5  HardFault_Handler           
+0000320d  _Z11ST7735_openPKcji        
+00003223  _Z11ST7735_readiPcj         
+00003239  _ZN8SlidePotC1Ejj           
+00003239  _ZN8SlidePotC2Ejj           
+0000324f  __TI_zero_init_nomemset     
+00003265  _Z15Sound_Explosionv        
+00003279  _Z15Sound_Highpitchv        
+0000328d  TI_memcpy_small             
+0000329f  __TI_decompress_none        
+000032b1  _Z11Clock_Delayj            
+000032cf  _Z12ST7735_lseekili         
+000032dd  strcpy                      
+00003307  TI_memset_small             
+00003315  _Z10Clock_Freqv             
+00003321  _Z13ST7735_renamePKcS0_     
+0000332d  __aeabi_memclr              
+0000332d  __aeabi_memclr4             
+0000332d  __aeabi_memclr8             
+00003339  malloc                      
+00003345  _Z12ST7735_closei           
+0000334f  _Z13ST7735_unlinkPKc        
+00003359  _Z8PLL_Initv                
+00003363  SysTick_Handler             
+0000336b  _Z10Sound_Initv             
+00003375  __aeabi_memcpy              
+00003375  __aeabi_memcpy4             
+00003375  __aeabi_memcpy8             
+0000337d  remove                      
+00003385  Reset_Handler               
+00003389  _system_pre_init            
+0000338c  C$$EXIT                     
+0000338d  abort                       
+00004cf0  SHT$$INIT_ARRAY$$Base       
+00004cf4  SHT$$INIT_ARRAY$$Limit      
+00004f84  __TI_Handler_Table_Base     
+00004f90  __TI_Handler_Table_Limit    
+00004f98  __TI_CINIT_Base             
+00004fa8  __TI_CINIT_Limit            
+00004fa8  __TI_CINIT_Warm             
+20200000  __start___llvm_prf_bits     
+20200000  __start___llvm_prf_cnts     
+20200000  __stop___llvm_prf_bits      
+20200000  __stop___llvm_prf_cnts      
+20200000  wordList                    
+20200260  _ftable                     
+20200350  _device                     
+202003c8  _stream                     
+20200418  Phrases                     
+20200448  Cursor                      
+2020045c  Sensor                      
+20200470  __TI_cleanup_ptr            
+20200474  __TI_dtors_ptr              
+20200478  BusFreq                     
+2020047c  CHScore                     
+20200480  StX                         
+20200484  StY                         
+20200488  __TI_ft_end                 
+2020048c  _lock                       
+20200490  _unlock                     
+20200498  space                       
+2020049c  StTextColor                 
+202004a3  colon                       
+202004a5  cursorPosition              
+202004a6  myLanguage                  
+202004a7  semaphore                   
+202004b0  _CIOBUF_                    
+202004b0  __CIOBUF_                   
+202005d0  __TI_tmpnams                
+20200670  letterStatus                
+2020068e  savedGuesses                
+202006ac  Message                     
+202006b8  parmbuf                     
+202006c0  currentGuess                
+202006c6  targetWord                  
+202006cc  Messageindex                
+202006d0  TExaSLogic                  
+202006d4  TExaSadc                    
+202006e8  maxScore                    
+202006ea  score                       
+202006ef  currentRow                  
+202006f0  gameRunning                 
+202006f1  gameWon                     
+202006f8  _sys_memory                 
+20207e00  __stack                     
+20208000  __STACK_END                 
+ffffffff  __TI_pprof_out_hndl         
+ffffffff  __TI_prof_data_size         
+ffffffff  __TI_prof_data_start        
+ffffffff  __binit__                   
+ffffffff  binit                       
+UNDEFED   __mpu_init                  
+UNDEFED   _system_post_cinit          
+
+[232 symbols]
